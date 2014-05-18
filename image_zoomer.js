@@ -1,6 +1,5 @@
 (function($) {
 
-  // Creating a Zoom Canvas that will be used to display some portion of the Image from the Canvas Element.
   var zoom_context, zoom_canvas  = "<canvas id='zoom_canvas' style='position: absolute;'></canvas>";
   var zoom_canvas_container_name = "#zoom_canvas_container", zoom_canvas_name = "#zoom_canvas";
 
