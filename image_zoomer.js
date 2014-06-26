@@ -5,17 +5,25 @@
 
   $.fn.image_zoomer = function(options) {
 
-    // extend default options with passed ones
-    var options = $.extend({
-      height: 90,
-      width: 90,
-      scale: 1.5
-    }, options);
+    if (typeof options == "string" && options == "destroy") {
+      this.data("is_destroyed", true);
+      return this;
+    } else {
+      // extend default options with passed ones
+      var options = $.extend({
+        height: 90,
+        width: 90,
+        scale: 1.5
+      }, options);
+      this.data("is_destroyed", false);
+    }
 
     var image = this;
 
     this.mouseenter(function(e) {
-      var elem = this;
+      if ($(this).data("is_destroyed")) {
+        return false;
+      }
       if ($(zoom_canvas_container_name).length == 0) {
         $(this).wrap("<span id='zoom_canvas_container'></span>");
         var zoom_canvas_container = $(zoom_canvas_container_name);

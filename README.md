@@ -18,6 +18,12 @@ You can also pass options to set height and width of zoom lens. For example:
 	$("img.zoom_it").each(function() {
     	$(this).image_zoomer(options);
   	});
+  	
+To destroy or taking-off zooming effect from any image you can use following code.
+
+	$("img.zoom_it:first").image_zoomer("destroy");
+	
+By using CSS selector of your choice you can take-off image zooming effect from single or multiple images of your choice. In above example I' am just taking-off image effect from first image and other images still have zoom effect.
 
 
 ### Supported Browsers
