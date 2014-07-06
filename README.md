@@ -10,11 +10,11 @@ This plugin actually zooms images by displaying scaled portion of images.
 	// use jQuery to select elements
 	$("img.zoom_it").each(function() {
     	$(this).image_zoomer();
-  	});
+  	});  	  	
 
-You can also pass options to set height and width of zoom lens. For example:
+By-default `height` and `width` of zoom lens are set to `90` and `zoom-level` or `scale` is set to `1.5`. You can easily override these default settings. For example:
 
-	var options = {height: 90, width: 90};
+	var options = {height: 120, width: 120, scale: 2};
 	$("img.zoom_it").each(function() {
     	$(this).image_zoomer(options);
   	});
